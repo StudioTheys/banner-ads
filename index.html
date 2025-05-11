@@ -1,20 +1,59 @@
-<!DOCTYPE html>
-<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Test Banner</title>
-    <style>
-        body { font-family: Arial, sans-serif; }
-        .banner { width: 500px; height: 500px; border: 1px solid #ccc; }
-        img { width: 100%; height: auto; }
-    </style>
+    <link href="style.css" type="text/css" rel="stylesheet" />
 </head>
-<body>
 
-    <div class="banner">
-        <img src="bg.png" alt="Background Image">
+<body>
+    <div id="container" style="width:500px; height:500px">
+        <!-- Remove the ad-specific clickTag logic -->
+        <a href="https://your-link.com" target="_blank">
+            <!-- Banner images and content -->
+            <img src="bg.png" class="abs-full bg" alt="Background Image" />
+            
+            <div class="textBubbleWrapper">
+                <img src="textBubble.png" class="textBubble" alt="Text Bubble" />
+                <img src="subText.png" class="subText" alt="Sub Text" />
+            </div>
+
+            <img src="painter3.png" class="painters painter3" alt="Painter 3" />
+            <img src="painter2.png" class="painters painter2" alt="Painter 2" />
+            <img src="painter1.png" class="painters painter1" alt="Painter 1" />
+
+            <img src="cta.png" class="cta" alt="Call to Action" />
+            <img src="logo.png" class="logo" alt="Logo" />
+        </a>
+
+        <!-- Close button to hide the content -->
+        <div class="close-button" onclick="toggleVisibility(false)">Close</div>
     </div>
 
+    <!-- Button to show ad/content -->
+    <div class="show-button" onclick="toggleVisibility(true)">Show Banner</div>
+
+    <!-- GSAP Library for animations -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js" integrity="sha512-NcZdtrT77bJr4STcmsGAESr06BYGE8woZdSdEgqnpyqac7sugNO+Tr4bGwGF3MsnEkGKhU2KL2xh6Ec+BqsaHA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- External JavaScript file -->
+    <script src="main.js" type="text/javascript"></script>
+
+    <script type="text/javascript" charset="utf-8">
+        // Function to toggle visibility of the banner and the "show banner" button
+        function toggleVisibility(show) {
+            const banner = document.querySelector('#container');
+            const showButton = document.querySelector('.show-button');
+            if (show) {
+                banner.style.display = 'block'; // Show the banner
+                showButton.style.display = 'none'; // Hide the show button
+            } else {
+                banner.style.display = 'none'; // Hide the banner
+                showButton.style.display = 'block'; // Show the show button
+            }
+        }
+
+        window.onload = function() {
+            // Show the banner initially and hide the "show banner" button
+            toggleVisibility(true);
+
+            // Initialize the banner animation after the page loads
+            setTimeout(initBanner, 1000);
+        };
+    </script>
 </body>
-</html>
