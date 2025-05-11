@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="ad.size" content="width=500,height=500" />
+	<link href="style.css" type="text/css" rel="stylesheet" />
+	<script src="https://s0.2mdn.net/ads/studio/Enabler.js"></script>
+
+	<script>
+		var clickTag = "";
+	</script>
+</head>
+
+<body>
+	<div id="container" class="" style="width:500px; height:500px">
+		<a href="javascript:window.open(window.clickTag)">
+			<img src="bg.png" class="abs-full bg" />
+			<div class="textBubbleWrapper">
+				<img src="textBubble.png" class="textBubble" />
+				<img src="subText.png" class="subText" />
+			</div>
+
+			<img src="painter3.png" class="painters painter3" />
+			<img src="painter2.png" class="painters painter2" />
+			<img src="painter1.png" class="painters painter1" />
+
+			<img src="cta.png" class="cta" />
+
+			<img src="logo.png" class="logo" />
+		</a>
+		<div class="close-button" onclick="toggleAdVisibility(false)"></div>
+	</div>
+	<div class="show-ad-button" onclick="toggleAdVisibility(true)"></div>
+
+	<script src="https://s0.2mdn.net/ads/studio/cached_libs/gsap_3.11.5_min.js"></script>
+
+	<script src="main.js" type="text/javascript"></script>
+    <script type="text/javascript" charset="utf-8">
+        // Function to toggle visibility of the ad and the "show ad" button
+        function toggleAdVisibility(show) {
+            const ad = document.querySelector('#container');
+            const showButton = document.querySelector('.show-ad-button');
+            if (show) {
+                ad.style.display = 'block'; // Show the ad
+                showButton.style.display = 'none'; // Hide the show button
+            } else {
+                ad.style.display = 'none'; // Hide the ad
+                showButton.style.display = 'block'; // Show the show button
+            }
+        }
+
+        window.onload = function() {
+            // Show the ad initially and hide the "show ad" button
+            toggleAdVisibility(true);
+
+            // Call the initBanner function after the page is loaded
+			setTimeout(initBanner, 1000);
+        };
+    </script>
+</body>
+
+</html>
