@@ -1,20 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-	<meta charset="UTF-8" />
-	<meta name="ad.size" content="width=500,height=500" />
-	<link href="style.css" type="text/css" rel="stylesheet" />
-	<script src="https://s0.2mdn.net/ads/studio/Enabler.js"></script>
-
-	<script>
-		var clickTag = "";
-	</script>
-</head>
-
-<body>
 	<div id="container" class="" style="width:500px; height:500px">
-		<a href="javascript:window.open(window.clickTag)">
 			<img src="bg.png" class="abs-full bg" />
 			<div class="textBubbleWrapper">
 				<img src="textBubble.png" class="textBubble" />
@@ -28,7 +13,6 @@
 			<img src="cta.png" class="cta" />
 
 			<img src="logo.png" class="logo" />
-		</a>
 		<div class="close-button" onclick="toggleAdVisibility(false)"></div>
 	</div>
 	<div class="show-ad-button" onclick="toggleAdVisibility(true)"></div>
@@ -57,6 +41,3 @@
 			setTimeout(initBanner, 1000);
         };
     </script>
-</body>
-
-</html>
